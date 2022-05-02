@@ -29,7 +29,7 @@ export default function TemporaryDrawer() {
       className="bg-slate-800 h-full text-white flex flex-col justify-center text-center md:hidden"
     >
       <List>
-        {['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'].map((text) => (
+        {['Airplanes', 'Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'].map((text) => (
           <ListItem button key={text}>
             <NavLink className="text-center w-full " to={`/${text.toLowerCase().replace(' ', '-')}/`}><ListItemText primary={text} /></NavLink>
           </ListItem>
