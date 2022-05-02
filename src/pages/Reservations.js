@@ -6,3 +6,4 @@ const Reservations = () => (
 );
 
 export default Reservations;
+E
