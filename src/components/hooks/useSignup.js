@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
@@ -9,10 +9,10 @@ export const useSignup = () => {
     setError(null);
     setIsPending(true);
     try {
-      const response = await fetch("http://localhost:3000/users", {
-        method: "POST",
+      const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           user: {
