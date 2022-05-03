@@ -57,7 +57,7 @@ export default function Signup() {
       {error && <p className="error">{error}</p>}
 
       <div className="or">
-        or 
+        or
         <Link to="/login">Login</Link>
       </div>
     </form>
