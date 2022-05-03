@@ -164,7 +164,7 @@ const NewReservation = () => {
           }
                   onDateChange={(date) => {
 
-                    setSelectedDate(formatDate(date));
+                 setSelectedDate(formatDate(date));
                   }}
                 />
               </div>
