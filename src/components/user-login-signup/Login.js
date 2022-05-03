@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import './Login.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -38,7 +39,9 @@ export default function Login() {
       </lable>
 
       <div className="or">
-        or <Link to="/signup">sign up</Link>
+        or
+        {' '}
+        <Link to="/signup">sign up</Link>
       </div>
     </form>
   );

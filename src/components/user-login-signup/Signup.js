@@ -1,7 +1,7 @@
 import './Login.css';
 import { useState } from 'react';
-import { useSignup } from '../hooks/useSignup';
 import { Link } from 'react-router-dom';
+import { useSignup } from '../hooks/useSignup';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -47,10 +47,10 @@ export default function Signup() {
       </lable>
 
       <lable className="lable">
-        {!isPending && <button className="btn">Signup</button>}
+        {!isPending && <button className="btn" type="submit">Signup</button>}
       </lable>
       {isPending && (
-        <button className="btn" disabled>
+        <button className="btn" type="submit" disabled>
           Signup
         </button>
       )}

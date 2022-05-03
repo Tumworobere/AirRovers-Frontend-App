@@ -13,6 +13,7 @@ const Navbar = () => (
         <li className="mt-2"><NavLink to="/add-reservation">Reserve</NavLink></li>
         <li className="mt-2"><NavLink to="/add-airplane">Add Airplane</NavLink></li>
         <li className="mt-2"><NavLink to="/remove-airplane">Remove Airplane</NavLink></li>
+        <li className="mt-2"><NavLink to="/signup">Signup</NavLink></li>
       </ul>
     </div>
   </>

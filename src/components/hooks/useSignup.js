@@ -1,6 +1,9 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
 import { useState } from 'react';
 
-export const useSignup = () => {
+export function useSignup() {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -34,4 +37,4 @@ export const useSignup = () => {
     }
   };
   return { error, isPending, signup };
-};
+}
