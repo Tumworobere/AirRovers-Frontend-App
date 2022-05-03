@@ -1,13 +1,13 @@
-import "./Login.css";
-import { useState } from "react";
-import { useSignup } from "../hooks/useSignup";
-import { Link } from "react-router-dom";
+import './Login.css';
+import { useState } from 'react';
+import { useSignup } from '../hooks/useSignup';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
 
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
   const { error, isPending, signup } = useSignup();
 
   const handleSubmit = (event) => {
@@ -57,7 +57,8 @@ export default function Signup() {
       {error && <p className="error">{error}</p>}
 
       <div className="or">
-        or <Link to="/login">Login</Link>
+        or 
+        <Link to="/login">Login</Link>
       </div>
     </form>
   );

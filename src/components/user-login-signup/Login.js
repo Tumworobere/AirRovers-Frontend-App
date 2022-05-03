@@ -1,11 +1,11 @@
-import "./Login.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import './Login.css';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   // const [username, setUsername] = useState('');
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(email,password);
