@@ -52,17 +52,13 @@ const cities = [
 ];
 
 const NewReservation = () => {
-  const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState('---Select City---');
   const [selectDate, setSelectedDate] = useState(TodayDate());
   const [Alertmessage, setAlertMessage] = useState('');
-  const Airplanes = useSelector((state) => state.Airplanes);
-  const currentUser = useSelector((state) => state.current_user);
-  const currentAirplane = useSelector((state) => state.current_airplane);
   const handleSubmit = async () => {
     if (selectedCity !== '---Select City---') {
       const reservation = {
-        user_id: currentUser.id, airplane_id: current_airplane.id, start_date: selectDate, city: selectedCity,
+        start_date: selectDate, city: selectedCity,
       };
       const reserveUrl = '';
       const result = await fetch(reserveUrl, {
@@ -74,20 +70,18 @@ const NewReservation = () => {
       });
       const message = await result.json();
       setAlertMessage(message);
-      dispatch(fetchReserve());
     } else {
       setAlertMessage('Kindly select a city');
     }
   };
 
-  const { id } = currentAirplane;
-  const allAirplanes = airplanes.airplanes;
+  const allAirplanes =airplanes.airplanes;
   let index = 0;
   if (id) {
     index = allairplanes.findIndex((airplane) => airplane.id === id);
   }
-  if (allAiplanes !== undefined) {
-    dispatch(selectairplanes(allairplanes[index]));
+  if (allAirplanes !== undefined) {
+    dispatch(selectairplanes(Allairplanes[index]));
   }
   const moreHandler = () => {
     const l = allAirplanes.length;
@@ -163,8 +157,7 @@ const NewReservation = () => {
             selectDate
           }
                   onDateChange={(date) => {
-
-                 setSelectedDate(formatDate(date));
+                    setSelectedDate(formatDate(date));
                   }}
                 />
               </div>
