@@ -1,8 +1,7 @@
-const Airplanes = () => (
-  <div>
-    <h1>Airplanes</h1>
-    <p>You will be able to see the Airplanes in this page.</p>
-  </div>
-);
+import React from 'react';
 
-export default Airplanes;
+export default function Airplanes() {
+  return (
+    <div>Airplanes</div>
+  );
+}
