@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Carousel from 'react-bootstrap/Carousel';
 // import { useNavigate, NavLink } from 'react-router-dom';
 import { fetchData } from '../redux/airplanes/airplanes';
+import '../App.css';
 
 export default function Airplanes() {
   const dispatch = useDispatch();
@@ -14,14 +16,23 @@ export default function Airplanes() {
   const dataArray = useSelector((state) => state.planeReducer.data);
 
   const airplanes = dataArray.map((plane) => (
-    <div className="plane-card" key={plane.id}>
-      <img src={plane.images} alt="airplane" />
-    </div>
+    <Carousel.Item key={plane.id}>
+      <img
+        className="d-block w-100 img"
+        src={plane.images}
+        alt="airplane"
+      />
+      <Carousel.Caption>
+        <h3>{plane.name}</h3>
+      </Carousel.Caption>
+    </Carousel.Item>
   ));
 
   return (
     <div className="airplanes">
-      {airplanes}
+      <Carousel fade variant="dark">
+        {airplanes}
+      </Carousel>
     </div>
   );
 }
