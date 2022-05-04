@@ -1,0 +1,43 @@
+.login-form {
+  max-width: 360px;
+  padding: 20px;
+  margin: 60px auto;
+}
+
+.login-form label {
+  display: block;
+  margin: 30px auto;
+}
+
+.login-form span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.login-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+}
+
+.or {
+  margin-top: 10px;
+}
+
+.btn {
+  background: none;
+  border: 2px solid #1f9751;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #1f9751;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.btn:hover {
+  background: #1f9751;
+  color: #fff;
+}

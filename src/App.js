@@ -6,6 +6,8 @@ import AddAirplane from './pages/addAirplane';
 import RemoveAirplane from './pages/RemoveAirplane';
 import ErrorPage from './pages/ErrorPage';
 import Navbar from './components/Navbar';
+import Signup from './components/user-login-signup/Signup';
+import Login from './components/user-login-signup/Login';
 
 const App = () => (
   <>
@@ -17,6 +19,8 @@ const App = () => (
         <Route path="/add-reservation" element={<Reserve />} />
         <Route path="/add-airplane" element={<AddAirplane />} />
         <Route path="/remove-airplane" element={<RemoveAirplane />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
