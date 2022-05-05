@@ -16,7 +16,7 @@ export default function Airplanes() {
   const dataArray = useSelector((state) => state.planeReducer.data);
 
   const airplanes = dataArray.map((plane) => (
-    <Carousel.Item key={plane.id}>
+    <Carousel.Item key={plane.id} className="item">
       <img
         className="d-block w-100 img"
         src={plane.images}
@@ -29,10 +29,24 @@ export default function Airplanes() {
   ));
 
   return (
-    <div className="airplanes">
-      <Carousel fade variant="dark">
-        {airplanes}
-      </Carousel>
-    </div>
+    <>
+      <section className="homepage">
+        <div>
+          <h1>
+            Airplane Models
+          </h1>
+
+          <p>
+            Please select an airplane model
+          </p>
+        </div>
+
+        <div className="airplanes">
+          <Carousel fade variant="dark" className="container">
+            {airplanes}
+          </Carousel>
+        </div>
+      </section>
+    </>
   );
 }
