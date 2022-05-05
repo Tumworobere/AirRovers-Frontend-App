@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DropdownDate } from 'react-dropdown-date';
-import './NewReserve.css';
+import './Reserve.css';
 
 const DateFormatter = (d, numOfyear) => {
   let month = `${d.getMonth() + 1}`;
@@ -75,45 +75,42 @@ const Reserve = () => {
     }
   };
 
-const Reserve = () => (
-  <div>
-    <h1>Reserve an Airplane</h1>
-    <p>
-      You will have a form displayed in this page. You will be able to rent an
-      Airplane using that form.
-    </p>
-    <p>Note: only admins should be able to add Airplanes.</p>
-    <form>
-      <div className="reserve-form">
-        <div className="city-style">
-          <select
-            id="cityId"
-            placeholder="city"
-          >
-            <option>---Select City---</option>
-            {cities.map((city) => <option key={city.id}>{city.name}</option>)}
-          </select>
-        </div>
-        <div className="date-style">
-          <DropdownDate
-            startDate={
+    <div>
+      <h1>Reserve an Airplane Today</h1>
+      <p>
+        Our airplanes are available in all five major cities everyday, reserve an airplane today
+      </p>
+      <p className="alert-reserve">{Alertmessage}</p>
+      <form>
+        <div className="reserve-form">
+          <div className="city-style">
+            <select
+              id="cityId"
+              placeholder="city"
+            >
+              <option>---Select City---</option>
+              {cities.map((city) => <option key={city.id}>{city.name}</option>)}
+            </select>
+          </div>
+          <div className="date-style">
+            <DropdownDate
+              startDate={
             TodayDate()
           }
-            endDate={
+              endDate={
             extendDate(5)
           }
-            selectedDate={
+              selectedDate={
             selectDate
           }
-            onDateChange={(date) => {
-              setSelectedDate(formatDate(date));
-            }}
-          />
+              onDateChange={(date) => {
+                setSelectedDate(formatDate(date));
+              }}
+            />
+          </div>
+          <button type="button" onClick={handleSubmit}>Reserve</button>
         </div>
-        <button type="button" onClick={handleSubmit}>Reserve</button>
-      </div>
-    </form>
-  </div>
-  );
+      </form>
+    </div>
 };
 export default Reserve;
