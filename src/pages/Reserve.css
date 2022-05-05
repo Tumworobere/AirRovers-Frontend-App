@@ -10,7 +10,7 @@ form {
     z-index: 1;
   }
   
-  .new-reserve-container {
+  .reserve-container {
     color: #fff;
     position: relative;
     display: flex;
