@@ -24,6 +24,10 @@
   margin-right: 15px;
 }
 
+.image img {
+  height: 100vh;
+}
+
 .info h2 {
   text-align: right;
   margin-bottom: 25px;
@@ -43,6 +47,19 @@
   padding: 10px;
   align-items: center;
   border-radius: 1em;
+}
+
+.link {
+  padding: 20px;
+  border: 1px  solid white;
+  border-top: 0;
+  border-right: 0;
+  margin: 0 4px;
+}
+
+.link > a {
+  text-decoration: none;
+  color: white;
 }
 
 .info div p {
