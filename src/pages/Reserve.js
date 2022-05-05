@@ -52,7 +52,7 @@ const cities = [
 ];
 
 const Reserve = () => {
-  const [selectedCity, setSelectedCity] = useState('---Select City---');
+  const [selectedCity] = useState('---Select City---');
   const [selectDate, setSelectedDate] = useState(TodayDate());
   const [Alertmessage, setAlertMessage] = useState('');
   const handleSubmit = async () => {
@@ -111,6 +111,6 @@ const Reserve = () => {
           <button type="button" onClick={handleSubmit}>Reserve</button>
         </div>
       </form>
-    </div>
+    </div>;
 };
 export default Reserve;
