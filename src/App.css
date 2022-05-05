@@ -35,15 +35,7 @@
   justify-content: space-between;
 }
 
-.info div p {
-  text-align: center;
-}
-
-.info div:nth-child(even) {
-  background: #999999;
-}
-
-.btn p{
+.btn p {
   text-decoration: none;
   background-color: #97bf0f;
   display: flex;
@@ -51,6 +43,14 @@
   padding: 10px;
   align-items: center;
   border-radius: 1em;
+}
+
+.info div p {
+  text-align: center;
+}
+
+.info div:nth-child(even) {
+  background: #999;
 }
 
 .btn p svg {
