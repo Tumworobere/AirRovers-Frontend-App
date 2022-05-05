@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Carousel from 'react-bootstrap/Carousel';
-// import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { fetchData } from '../redux/airplanes/airplanes';
+import { fetchPlaneStats } from '../redux/details/details';
 import '../App.css';
 
 export default function Airplanes() {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+
+  const pageChange = (e) => {
+    dispatch(fetchPlaneStats(e.target.id));
+  };
 
   useEffect(() => {
     dispatch(fetchData());
@@ -23,7 +27,9 @@ export default function Airplanes() {
         alt="airplane"
       />
       <Carousel.Caption>
-        <h3>{plane.name}</h3>
+        <NavLink to="/details" onClick={pageChange} id={plane.id}>
+          <h3 id={plane.id}>{plane.name}</h3>
+        </NavLink>
       </Carousel.Caption>
     </Carousel.Item>
   ));
