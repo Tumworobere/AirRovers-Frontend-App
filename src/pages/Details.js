@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
+
 import '../App.css';
 
 export default function Details() {
@@ -33,14 +35,30 @@ export default function Details() {
         </div>
 
         <div>
+          <p>More info</p>
+          <a href={plane.url}>Wikipedia</a>
+        </div>
+
+        <div>
           <p>Price</p>
           <p>
             $
             {plane.price}
           </p>
         </div>
-        <NavLink to="/add-reservation">
-          Reserve
+        <NavLink to="/add-reservation" className="btn">
+          <p>
+            <FaRegSun />
+            {' '}
+            Reserve
+            <FaRegArrowAltCircleRight />
+          </p>
+        </NavLink>
+        <br />
+        <NavLink to="/" className="btn">
+          <p>
+            <FaRegArrowAltCircleLeft />
+          </p>
         </NavLink>
       </div>
     </div>

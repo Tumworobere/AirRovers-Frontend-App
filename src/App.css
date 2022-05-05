@@ -42,3 +42,21 @@
 .info div:nth-child(even) {
   background: #999999;
 }
+
+.btn p{
+  text-decoration: none;
+  background-color: #97bf0f;
+  display: flex;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  border-radius: 1em;
+}
+
+.btn p svg {
+  margin-inline: 10px;
+}
+
+a.btn:hover {
+  background-color: white;
+}
