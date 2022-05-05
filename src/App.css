@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
@@ -9,3 +14,31 @@
   height: 80vh;
 }
 
+.contain {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  padding: 15px;
+}
+
+.image {
+  margin-right: 15px;
+}
+
+.info h2 {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.info div {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.info div p {
+  text-align: center;
+}
+
+.info div:nth-child(even) {
+  background: #999999;
+}
