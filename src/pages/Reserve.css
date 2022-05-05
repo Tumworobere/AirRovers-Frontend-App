@@ -83,7 +83,7 @@ div select {
   flex-direction: row;
   cursor: pointer;
 }
- 
+
 .city-style select {
   padding: 10px;
   border-radius: 30px;
@@ -97,7 +97,7 @@ div select {
   display: flex;
   gap: 10px;
 }
-  
+
 #dropdown-date select {
   padding: 10px;
   border-radius: 30px;
@@ -127,19 +127,19 @@ div select {
     flex-direction: column;
     gap: 40px;
     justify-content: center;
-}
+  }
 
   .reserve-form :nth-child(1) {
     order: 2;
-}
+  }
 
- .reserve-form :nth-child(2) {
+  .reserve-form :nth-child(2) {
     order: 1;
-}
+  }
 
   .reserve-form :nth-child(3) {
     order: 3;
-}
+  }
 
   .city-style {
     margin-right: 0;
