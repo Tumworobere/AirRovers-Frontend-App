@@ -6,7 +6,7 @@ import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'rea
 import '../App.css';
 
 export default function Details() {
-  const planeStats = useSelector((state) => state.detailsReducer.data);
+  const planeStats = useSelector((state) => state.details.data);
 
   const plane = planeStats.map((plane) => (
     <div key={plane.id} className="contain">

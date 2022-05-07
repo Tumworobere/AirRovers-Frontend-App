@@ -1,16 +1,16 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import planeReducer from './airplanes/airplanes';
-import detailsReducer from './details/details';
+import reservationsReducer from './reservations/reservations';
 
-const reducer = combineReducers({
-  planeReducer,
-  detailsReducer,
+const rootReducer = combineReducers({
+  airplanes: planeReducer,
+  reservations: reservationsReducer,
 });
 
 const store = createStore(
-  reducer,
+  rootReducer,
   applyMiddleware(logger, thunk),
 );
 

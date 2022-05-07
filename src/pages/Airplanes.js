@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Carousel from 'react-bootstrap/Carousel';
 import { NavLink } from 'react-router-dom';
-import { fetchData } from '../redux/airplanes/airplanes';
+import { fetchAirplanes } from '../redux/airplanes/airplanes';
 import { fetchPlaneStats } from '../redux/details/details';
 import '../App.css';
 
@@ -14,10 +14,10 @@ export default function Airplanes() {
   };
 
   useEffect(() => {
-    dispatch(fetchData());
+    dispatch(fetchAirplanes());
   }, []);
 
-  const dataArray = useSelector((state) => state.planeReducer.data);
+  const dataArray = useSelector((state) => state.airplanes.airplanes_arr);
 
   const airplanes = dataArray.map((plane) => (
     <Carousel.Item key={plane.id} className="item">
@@ -27,7 +27,7 @@ export default function Airplanes() {
         alt="airplane"
       />
       <Carousel.Caption>
-        <NavLink to="/details" onClick={pageChange} id={plane.id}>
+        <NavLink to="/details" className="mt-0 p-0 text-center" onClick={pageChange} id={plane.id}>
           <h3 id={plane.id}>{plane.name}</h3>
         </NavLink>
       </Carousel.Caption>
