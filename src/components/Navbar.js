@@ -42,7 +42,7 @@ const Navbar = () => {
       >
         <List className="h-full flex flex-col justify-center">
           {getMenu().map((text) => (
-            <div key={uuidv4()} className="text-center border-b border-gray-500 border-opacity-70 w-full hover:shadow-red-400 hover:shadow-inner flex justify-evenly transition-all delay-75">
+            <div key={uuidv4()} className="text-center text-green-700 border-b border-gray-500 border-opacity-70 w-full hover:shadow-red-400 hover:shadow-inner flex justify-evenly transition-all delay-75">
               <NavImages key={uuidv4()} text={text} />
               <span
                 key={uuidv4()}

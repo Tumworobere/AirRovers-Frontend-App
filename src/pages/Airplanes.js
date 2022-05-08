@@ -20,14 +20,14 @@ export default function Airplanes() {
   const dataArray = useSelector((state) => state.airplanes.airplanes_arr);
 
   const airplanes = dataArray.map((plane) => (
-    <Carousel.Item key={plane.id} className="item">
+    <Carousel.Item key={plane.id} className="item h-screen w-screen justify-center">
       <img
-        className="d-block w-100 img"
+        className="d-block w-100 img justify-center"
         src={plane.images}
         alt="airplane"
       />
       <Carousel.Caption>
-        <NavLink to="/details" className="mt-0 p-0 text-center" onClick={pageChange} id={plane.id}>
+        <NavLink to="/details" className="mt-0 p-0 text-center font-bold text-green-700 uppercase" onClick={pageChange} id={plane.id}>
           <h3 id={plane.id}>{plane.name}</h3>
         </NavLink>
       </Carousel.Caption>

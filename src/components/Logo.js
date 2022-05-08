@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from './assets/AirLogo.PNG';
+import logo from './assets/plane_logo.PNG';
 
 const Logo = () => {
   const navigate = useNavigate();
