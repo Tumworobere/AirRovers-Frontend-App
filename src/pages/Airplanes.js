@@ -20,9 +20,9 @@ export default function Airplanes() {
   const dataArray = useSelector((state) => state.airplanes.airplanes_arr);
 
   const airplanes = dataArray.map((plane) => (
-    <Carousel.Item key={plane.id} className="item h-screen w-screen justify-center">
+    <Carousel.Item key={plane.id} className="overscroll-x-none item h-screen w-screen justify-center">
       <img
-        className="d-block w-100 img justify-center"
+        className="d-block w-screen img justify-center"
         src={plane.images}
         alt="airplane"
       />
