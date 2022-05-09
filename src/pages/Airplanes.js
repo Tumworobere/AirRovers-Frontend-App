@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Slider from 'react-slick';
 import { FaChevronCircleRight, FaChevronCircleLeft } from 'react-icons/fa';
+import { TiSocialTwitterCircular, TiSocialFacebookCircular, TiSocialLinkedinCircular } from 'react-icons/ti';
 import { fetchAirplanes } from '../redux/airplanes/airplanes';
 import { fetchPlaneStats } from '../redux/details/details';
 import 'slick-carousel/slick/slick.css';
@@ -19,7 +20,7 @@ const PrevBtn = (props) => {
 
   return (
     <div className={className} onClick={onClick}>
-      <FaChevronCircleLeft style={{ color: 'red' }} />
+      <FaChevronCircleLeft />
     </div>
   );
 };
@@ -28,7 +29,7 @@ const NextBtn = (props) => {
 
   return (
     <div className={className} onClick={onClick}>
-      <FaChevronCircleRight style={{ color: 'red' }} />
+      <FaChevronCircleRight />
     </div>
   );
 };
@@ -57,7 +58,12 @@ export default function Airplanes() {
         <h3 id={plane.id}>{plane.name}</h3>
       </NavLink>
       <p>{plane.speed}</p>
-      <p>{plane.range}</p>
+
+      <div className="icons">
+        <TiSocialFacebookCircular />
+        <TiSocialTwitterCircular />
+        <TiSocialLinkedinCircular />
+      </div>
     </div>
 
   ));
