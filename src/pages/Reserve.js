@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import {Link} from 'react-router-dom'
-import reserve  from './hooks/reserve'
-
 
 export default function Reservation () {
   const [from, setFrom] = useState('');
