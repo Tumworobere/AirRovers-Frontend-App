@@ -14,11 +14,11 @@
   height: 80vh;
 }
 
-.contain {
+/* .contain {
   display: grid;
   grid-template-columns: 75% 25%;
   padding: 15px;
-}
+} */
 
 .image {
   margin-right: 15px;
