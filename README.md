@@ -1,70 +1,107 @@
-# Final Capstone Project
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rentcopter Front-end
+> This is the frontend of the AirRover Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create a reservation to book a specific Airplane and view them within the reservations page. The backend can be found [here](https://github.com/alexander16108/AirRentals-backend)
 
-## Available Scripts
+## Screenshots
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built with
+- HTML
+- CSS
+- Tailwind CSS
+- Javascript
+- React
+- Redux
+- Lots of love :heart:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Kanban Board
+### Link to Kanban Board: Click [here](https://github.com/alexander16108/AirRentals-backend/projects/1)
+#### Number of team members: 4.
+#### Screenshot of initial state: 
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/60612329/165742626-c5e113a2-3060-4f59-b6a0-cd40c49c4c4a.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**To get this project set up on your local machine, follow these steps:**
 
-### `npm run eject`
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run `git clone https://github.com/alexander16108/AirRentals-backend.git`
+4. Run `cd dev`
+5. Run `bundle install`
+6. Run `rails db:reset`
+7. Run `rails server` or `rails s`
+8. Open http://localhost:3000/ within your browser
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**To run the tests, follow these steps:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Ensure you are in the project root directory
+2. Ensure you ran `bundle install`
+3. run `rspec`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**To get this project set up on your local machine, follow these steps:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run  `git clone https://github.com/Tumworobere/AirRovers-Frontend-App.git`
+4. Run  `cd development`
+5. Run `npm install` or `npm i`
+6. Run `yarn start` or `npm start`
+7. Open http://localhost:3000/ within your browser
 
-## Learn More
+**To run the tests, follow these steps:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Ensure you are in the project root directory
+2. Ensure you ran `npm install`
+3. run `npm run test`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Authors:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Alexander Odufuye**
 
-### Analyzing the Bundle Size
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/alexander16108)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/coderrex/)
+ <a href="mailto:alexandermayowa@gmail.com?subject=Sup Alexander?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Kingsley Junior Cho**
 
-### Making a Progressive Web App
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Kingstalux)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/NguKingsley)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/ngu-kingsely-junior-cho-974b60136/)
+ 
+ 👤 **Annah Tumworobere**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Tumworobere)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/annah-tumworobere-6258b443/)
+ <a href="mailto:annaht.annah@gmail.com?subject=Sup Annah?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
+  
+ 👤 **Taro Chilongoshi**
 
-### Advanced Configuration
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Tchilo)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/Tchiloross)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Feel free to check the [issues page](https://github.com/Tumworobere/AirRovers-Frontend-App/issues).
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 MIT License
+
+This project makes use of the MIT license.
