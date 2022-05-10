@@ -2,51 +2,51 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
-
-import '../App.css';
+// import '../App.css';
+import './details.css';
 
 export default function Details() {
   const planeStats = useSelector((state) => state.details.data);
 
   const plane = planeStats.map((plane) => (
-    <div key={plane.id} className="flex contents">
+    <div key={plane.id} className="contents">
       <div className="image">
         <img
-          className="d-block w-9 h-48 img inset-auto md:w-full md:h-60 rounded-2xl hover:shadow-2xl hover:shadow-gray-600 transition-all"
           src={plane.images}
           alt="airplane"
         />
       </div>
-      <div className="info h-9 w-56 fixed inset-1/2 bg-gray-900 bg-opacity-75 rounded-t-md">
-        <h2 className="cool-title my-auto text-center capitalize text-white h-full">{plane.name}</h2>
-        <div>
-          <p>capacity</p>
+      <div className="info">
+        <h2 className="heading cool-title my-auto text-center capitalize text-white h-full">{plane.name}</h2>
+        <div className="specs">
+          <p>Capacity</p>
           <p>{plane.capacity}</p>
         </div>
 
-        <div>
+        <div className="specs">
           <p>Speed</p>
           <p>{plane.speed}</p>
         </div>
 
-        <div>
+        <div className="specs">
           <p>Range</p>
           <p>{plane.range}</p>
         </div>
 
-        <div>
+        <div className="specs">
           <p>More info</p>
           <a href={plane.url}>Wikipedia</a>
         </div>
 
-        <div>
+        <div className="specs price">
           <p>Price</p>
           <p>
             $
             {plane.price}
           </p>
         </div>
-        <div className="flex hover:bg-none mb-9 object-center">
+
+        <div>
           <NavLink to="/add-reservation" className="btn">
             <p>
               <FaRegSun />
@@ -55,8 +55,7 @@ export default function Details() {
               <FaRegArrowAltCircleRight />
             </p>
           </NavLink>
-          <br />
-          <NavLink to="/" className="btn">
+          <NavLink to="/" className="btn back">
             <p>
               <FaRegArrowAltCircleLeft />
             </p>
@@ -67,8 +66,9 @@ export default function Details() {
   ));
 
   return (
-    <>
+    <div className="detail">
+      <h1>Plane Stats</h1>
       { plane }
-    </>
+    </div>
   );
 }
