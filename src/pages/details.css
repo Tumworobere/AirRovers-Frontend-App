@@ -30,6 +30,13 @@ h1 {
   box-shadow: -1px 2px 17px white;
 }
 
+.image img:hover {
+  box-shadow: -1px 2px 17px #1f9751;
+  transform: scale(0.95);
+  cursor: pointer;
+  transition: 500ms;
+}
+
 .info {
   width: 85vw;
 }
@@ -51,7 +58,7 @@ h1 {
 
 .btn p {
   text-decoration: none;
-  background-color: #2ea60a;
+  background-color: #1f9751;
   display: flex;
   justify-content: space-around;
   width: 170px;
