@@ -74,10 +74,6 @@
   margin-inline: 10px;
 }
 
-/* a.btn:hover {
-  background-color: white;
-} */
-
 @media (max-width: 776px) {
   .contents {
     grid-template-columns: 1fr;

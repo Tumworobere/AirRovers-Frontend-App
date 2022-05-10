@@ -75,6 +75,7 @@
 
 .card p {
   margin: 5px;
+  color: white;
 }
 
 .card h3 {
@@ -91,6 +92,7 @@
 
 .icons svg {
   font-size: 40px;
+  color: white;
 }
 
 @media (max-width: 700px) {

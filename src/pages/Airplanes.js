@@ -38,7 +38,7 @@ export default function Airplanes() {
   const dispatch = useDispatch();
 
   const pageChange = (e) => {
-    dispatch(fetchPlaneStats(e.target.id));
+    dispatch(fetchPlaneStats(e.target.parentElement.id));
   };
 
   useEffect(() => {
@@ -49,21 +49,23 @@ export default function Airplanes() {
 
   const airplanes = dataArray.map((plane) => (
 
-    <div className="card" key={plane.id}>
-      <img
-        src={plane.images}
-        alt="airplane"
-      />
+    <div className="card" key={plane.id} id={plane.id}>
       <NavLink to="/details" className="mt-0 p-0 text-center font-bold text-green-700 uppercase" onClick={pageChange} id={plane.id}>
-        <h3 id={plane.id}>{plane.name}</h3>
-      </NavLink>
-      <p>{plane.speed}</p>
 
-      <div className="icons">
-        <TiSocialFacebookCircular />
-        <TiSocialTwitterCircular />
-        <TiSocialLinkedinCircular />
-      </div>
+        <img
+          src={plane.images}
+          alt="airplane"
+        />
+        <h3>{plane.name}</h3>
+        <p>{plane.speed}</p>
+
+        <div className="icons" id={plane.id}>
+          <TiSocialFacebookCircular />
+          <TiSocialTwitterCircular />
+          <TiSocialLinkedinCircular />
+        </div>
+      </NavLink>
+
     </div>
 
   ));
