@@ -1,17 +1,16 @@
 import { useState } from 'react';
 
-export default function Reservation () {
+export default function Reservation (){
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
-    reserve(from,to)
-  }
+    reserve(from,to);
+  };
 
-  return(
-<form className='login-form' onSubmit={handleSubmit}>
+  return (
+      <form className='login-form' onSubmit={handleSubmit}>
   <h2>Today's Date</h2>
-  
   <lable className='lable'>
     <span>From:</span>
     <input type="date" onChange={(e) => setFrom(e.target.value)} value={from} />
