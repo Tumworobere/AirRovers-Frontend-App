@@ -68,7 +68,7 @@ export const register = async (name, mail, password) => {
   });
 };
 
-export const addPlane = async (name, desc, cost, capacity, range, speed, image) => {
+export const addPlane = async (name, price, capacity, speed, image, info) => {
   await fetch(
     `${baseAPI}api/v1/Aiplanes`,
     {
@@ -80,12 +80,11 @@ export const addPlane = async (name, desc, cost, capacity, range, speed, image) 
       body: JSON.stringify({
         Aiplane: {
           name,
-          description: desc,
-          rental_cost: cost,
+          rental_price: price,
           capacity,
-          flying_range: range,
           flying_speed: speed,
           image,
+          info,
         },
       }),
     },
