@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAirplanes } from './redux/airplanes/airplanes';
 import { fetchReservations } from './redux/reservations/reservations';
 import Airplanes from './pages/Airplanes';
+import Reserve from './pages/Reserve';
 import Reservations from './pages/Reservations';
 import AddAirplane from './pages/addAirplane';
 import RemoveAirplane from './pages/RemoveAirplane';
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/reservations" element={<Reservations />} />
+        <Route path="/reserve" element={<Reserve />} />
         <Route path="/" element={<Airplanes />} />
         <Route path="/add-airplane" element={<AddAirplane />} />
         <Route path="/remove-airplane" element={<RemoveAirplane />} />

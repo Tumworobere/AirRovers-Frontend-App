@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Reservation() {
+export default function Reserve() {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const handleSubmit = (event) => {
