@@ -44,7 +44,7 @@ export const login = async (mail, password) => {
 
 export const register = async (name, mail, password) => {
   await fetch(
-    `${baseAPI}signup`,
+    `${baseAPI}/users`,
     {
       method: 'POST',
       headers: {
