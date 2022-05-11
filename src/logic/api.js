@@ -110,6 +110,26 @@ export const delete_plane = async (id) => {
   });
 };
 
+export const add_reservation = async (plane_id, start_date, end_date) => {
+  const user_id = userId();
+  await fetch(`${baseAPI}/users/${user_id}/reservations/`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      Authorization: sessionStorage.getItem('token'),
+    },
+    body: JSON.stringify({
+      reservation: {
+        plane_id,
+        user_id,
+        start_date,
+        end_date,
+      },
+    }),
+  }).then((response) => {
+    response.status === 201 ? popup('Reservation added succesfully', 'green') : popup('Error while adding reservation', 'red');
+  });
+};
 
 export const delete_reservation = async (id) => {
   await fetch(
