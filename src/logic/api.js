@@ -34,9 +34,9 @@ export const login = async (mail, password) => {
     }
   }).then((userInfo) => {
     if (userInfo) {
-      for (const [key, value] of Object.entries(userInfo)) {
-        sessionStorage.setItem(key, value);
-      }
+      
+      sessionStorage.setItem('user', JSON.stringify(userInfo));
+      
       window.location = '#/';
     }
   });
