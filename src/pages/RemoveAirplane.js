@@ -1,9 +1,10 @@
+/* eslint-disable import/named */
 /* eslint-disable no-unused-expressions */
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { topDown } from '../animations';
-import planeCard from '../components/planeCard';
+import { PlaneCard } from '../components/PlaneCard';
 
 const RemoveAirplane = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const RemoveAirplane = () => {
       <hr className="h-1 border-slate-700 mt-4" />
       <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-evenly mt-20 m-auto w-full h-full" style={{ gap: '20px' }}>
         {airplanes.map((airplane) => (
-          <planeCard key={airplane.id} airplane={airplane} />
+          <PlaneCard key={airplane.id} airplane={airplane} />
         ))}
       </ul>
     </div>

@@ -14,7 +14,7 @@ export default function TemporaryDrawer() {
     left: false,
   });
   const menu = ['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'];
-  const getMenu = () => (menu === 'true');
+  const getMenu = () => (menu);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

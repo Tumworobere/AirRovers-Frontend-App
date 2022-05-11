@@ -6,7 +6,7 @@ import LowerCardReserve from './lowerCardReserve';
 
 /* eslint-disable */
 
-const planeCard = (props) => {
+const PlaneCard = (props) => {
     const location = useLocation();
 
     return(
@@ -35,4 +35,4 @@ const planeCard = (props) => {
     </div>
 );}
 
-export default planeCard;
+export default PlaneCard;
