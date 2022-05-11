@@ -1,31 +1,48 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+/* eslint-disable no-nested-ternary */
+import {
+  HashRouter as Router, Routes, Route,
+} from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAirplanes } from './redux/airplanes/airplanes';
+import { fetchReservations } from './redux/reservations/reservations';
 import Airplanes from './pages/Airplanes';
 import Reservations from './pages/Reservations';
-import Reserve from './pages/Reserve';
 import AddAirplane from './pages/addAirplane';
 import RemoveAirplane from './pages/RemoveAirplane';
 import ErrorPage from './pages/ErrorPage';
 import Navbar from './components/Navbar';
-import Signup from './components/user-login-signup/Signup';
-import Login from './components/user-login-signup/Login';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Details from './pages/Details';
 
-const App = () => (
-  <>
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (sessionStorage.getItem('token') !== null) {
+      dispatch(fetchAirplanes());
+      dispatch(fetchReservations());
+    }
+  }, [dispatch]);
+  const loading1 = useSelector((state) => state.airplanes.loading);
+  const loading2 = useSelector((state) => state.reservations.loading);
+  const { hash } = window.location;
+  return (
     <Router>
-      <Navbar />
+      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? true : null : null}
+      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
       <Routes>
-        <Route path="/" element={<Airplanes />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Signup />} />
         <Route path="/reservations" element={<Reservations />} />
-        <Route path="/add-reservation" element={<Reserve />} />
+        <Route path="/" element={<Airplanes />} />
         <Route path="/add-airplane" element={<AddAirplane />} />
         <Route path="/remove-airplane" element={<RemoveAirplane />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/details" element={<Details />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
-  </>
-
-);
+  );
+};
 
 export default App;
