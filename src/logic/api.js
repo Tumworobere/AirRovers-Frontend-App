@@ -3,6 +3,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-restricted-syntax */
 import { downTop } from '../animations';
+import userId from '../user';
 import { popup } from './popup';
 
 export const baseAPI = 'https://aviones-api.herokuapp.com';
@@ -108,6 +109,7 @@ export const delete_plane = async (id) => {
     response.status === 204 ? popup('Aiplane removed succesfully', 'green') : popup('Error while removing Aiplane', 'red');
   });
 };
+
 
 export const delete_reservation = async (id) => {
   await fetch(
