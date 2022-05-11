@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { dateDifference, TODAY, MONTHLATER } from '../logic/date';
 import { PostReservation } from '../redux/reservations/reservations';
 
-const planeForm = (props) => {
+const PlaneForm = (props) => {
   const { airplane } = props;
   const { rental_price: price } = airplane;
 
@@ -93,8 +93,8 @@ const planeForm = (props) => {
   );
 };
 
-planeForm.propTypes = {
+PlaneForm.propTypes = {
   airplane: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default planeForm;
+export default PlaneForm;

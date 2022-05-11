@@ -7,7 +7,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import planeForm from './planeForm';
+import PlaneForm from './planeForm';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -86,7 +86,7 @@ export default function CustomizedDialogs(props) {
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           Reserve Airplane
         </BootstrapDialogTitle>
-          <planeForm airplane={props.airplane} />
+          <PlaneForm airplane={props.airplane} />
       </BootstrapDialog>
     </div>
   );
