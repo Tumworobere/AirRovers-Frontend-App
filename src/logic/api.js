@@ -34,9 +34,8 @@ export const login = async (mail, password) => {
     }
   }).then((userInfo) => {
     if (userInfo) {
-      
       sessionStorage.setItem('user', JSON.stringify(userInfo));
-      
+
       window.location = '#/';
     }
   });
