@@ -9,7 +9,7 @@ export const baseAPI = 'https://aviones-api.herokuapp.com';
 
 export const login = async (mail, password) => {
   await fetch(
-    `${baseAPI}login`,
+    `${baseAPI}/users/sign_in`,
     {
       method: 'POST',
       headers: {
