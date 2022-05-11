@@ -47,7 +47,6 @@ const Navbar = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (hash !== `#/${text.toLowerCase().replace(' ', '-')}`) {
-                    downTop();
                     setTimeout(() => {
                       navigate(`/${text.toLowerCase().replace(' ', '-')}`);
                     }, 250);
