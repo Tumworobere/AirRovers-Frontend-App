@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Rentcopter Front-end
+# AirRentals Front-end
 > This is the frontend of the AirRover Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create a reservation to book a specific Airplane and view them within the reservations page. The backend can be found [here](https://github.com/alexander16108/AirRentals-backend)
 
 ## Screenshots
