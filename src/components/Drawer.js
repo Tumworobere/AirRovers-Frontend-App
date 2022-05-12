@@ -13,10 +13,8 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-  const isAdmin = sessionStorage.getItem('admin');
-  const normalMenu = ['Reservations', 'Add reservation'];
-  const adminMenu = ['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'];
-  const getMenu = () => (isAdmin === 'true' ? adminMenu : normalMenu);
+  const menu = ['Reservations', 'Add Reservation', 'Add Airplane', 'Remove Airplane'];
+  const getMenu = () => (menu);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

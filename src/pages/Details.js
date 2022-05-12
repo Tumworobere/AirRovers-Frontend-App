@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
-// import '../App.css';
+import { deletePlane } from '../logic/api';
 import './details.css';
 
 export default function Details() {
@@ -47,7 +47,7 @@ export default function Details() {
         </div>
 
         <div>
-          <NavLink to="/add-reservation" className="btn">
+          <NavLink to="/add-reservation" className="btns">
             <p>
               <FaRegSun />
               {' '}
@@ -55,11 +55,12 @@ export default function Details() {
               <FaRegArrowAltCircleRight />
             </p>
           </NavLink>
-          <NavLink to="/" className="btn back">
+          <NavLink to="/" className="btns back">
             <p>
               <FaRegArrowAltCircleLeft />
             </p>
           </NavLink>
+          <button type="button" id={plane.id} onClick={(e) => deletePlane(e.target.id)}>Delete</button>
         </div>
       </div>
     </div>

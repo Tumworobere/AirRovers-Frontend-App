@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-useless-escape */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../logic/api';
 import { topDown, downTop } from '../animations';
@@ -13,6 +13,11 @@ const Register = () => {
   useEffect(() => {
     topDown();
   }, []);
+
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
   sessionStorage.getItem('token') !== null ? navigate('/') : null;
   return (
     <div className="h-screen w-screen">
@@ -23,26 +28,20 @@ const Register = () => {
             <label htmlFor="user" className="inline-block text-gray-700 w-full">
               Username
               <br />
-              <input type="text" id="name" placeholder="Enter username" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setName(e.target.value)} value={name} type="text" id="name" placeholder="Enter username" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
           <div className=" mb-4">
             <label htmlFor="email" className="inline-block text-gray-700 w-full">
               Email
               <br />
-              <input type="email" id="email" placeholder="Enter email address" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
-            </label>
-          </div>
-          <div className=" mb-4">
-            <label htmlFor="password" className="inline-block mb-2 text-gray-700 w-full">
-              Password
-              <input id="password" type="password" placeholder="Enter password" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" id="email" placeholder="Enter email address" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
           <div className=" mb-6">
-            <label htmlFor="confirmPassword" className="inline-block mb-2 text-gray-700 w-full">
-              Confirm Password
-              <input id="confirmPassword" type="password" placeholder="Confirm previous password" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+            <label htmlFor="password" className="inline-block mb-2 text-gray-700 w-full">
+              Password
+              <input id="password" onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Enter password" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
           <button
@@ -51,7 +50,7 @@ const Register = () => {
         px-6
         py-2.5
         bg-emerald-800
-        text-white
+        text-black
         font-medium
         text-m
         leading-tight
@@ -67,8 +66,8 @@ const Register = () => {
             onClick={(e) => {
               e.preventDefault;
               const form = document.getElementById('form');
-              if (form.password.value === form.confirmPassword.value && form.email.value.match(regexEmail)) {
-                register(form.name.value, form.email.value, form.password.value);
+              if (form.password.value && form.email.value.match(regexEmail)) {
+                register(name, email, password);
               } else {
                 popup('Invalid input!', 'red');
               }

@@ -10,7 +10,7 @@ const ReservationCard = (props) => {
     const dispatch = useDispatch();
     return(
     <div className='w-full h-36 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-t-3xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
-        backgroundImage: `url(${props.reservation.helicopter.image})`, 
+        backgroundImage: `url(${props.reservation.airplane.image})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         borderRadius: 10,
@@ -18,7 +18,7 @@ const ReservationCard = (props) => {
         flexFlow: 'column-reverse'}}>
         <div className="relative top-6 h-28 md:h-1/2 w-1/2 md:w-3/4 mx-auto bg-white bg-opacity-80 rounded-t-md flex flex-col shadow-black shadow-xl">
             <div className="flex flex-col">
-                <p className="mx-auto mt-2 raleway font-bold text-xl text-black">{props.reservation.helicopter.name}</p>
+                <p className="mx-auto mt-2 raleway font-bold text-xl text-black">{props.reservation.airplane.name}</p>
                 <hr className="border-black h-1 w-3/4 m-auto" />
                 <div className="flex p-2 pb-0">
                     <div className="w-full flex flex-col justify-center text-black text-xs montserrat text-center">

@@ -11,10 +11,8 @@ import LogoutButton from './logout';
 const Navbar = () => {
   const navigate = useNavigate();
   const { hash } = window.location;
-  const isAdmin = sessionStorage.getItem('admin');
-  const normalMenu = ['Reservations', 'Add reservation'];
-  const adminMenu = ['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'];
-  const getMenu = () => (isAdmin === 'true' ? adminMenu : normalMenu);
+  const menu = ['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'];
+  const getMenu = () => (menu);
   return (
     <div className={`md:w-1/4 lg:w-1/5 block ${hash === '#/login' || hash === '#/register' ? 'hidden' : null}`}>
       <Drawer />
@@ -49,7 +47,6 @@ const Navbar = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (hash !== `#/${text.toLowerCase().replace(' ', '-')}`) {
-                    downTop();
                     setTimeout(() => {
                       navigate(`/${text.toLowerCase().replace(' ', '-')}`);
                     }, 250);
