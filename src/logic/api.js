@@ -122,15 +122,15 @@ export const addReservation = async (start_date, end_date) => {
       // Authorization: sessionStorage.getItem('token'),
     },
     body: JSON.stringify({
-        date_of_reservation: start_date,
-        end_of_reservation: end_date,
-        cancelled: false,
-        user_id,
-        plane_id: planeId,
+      date_of_reservation: start_date,
+      end_of_reservation: end_date,
+      cancelled: false,
+      user_id,
+      plane_id: planeId,
     }),
   }).then((response) => {
     response.status === 201 ? popup('Reservation added succesfully', 'green') : popup('Error while adding reservation', 'red');
-  }).then((data) => console.log(data))
+  }).then((data) => console.log(data));
 };
 
 export const delete_reservation = async (id) => {
