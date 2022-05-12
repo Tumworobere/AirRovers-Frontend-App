@@ -2,8 +2,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable consistent-return */
 /* eslint-disable no-restricted-syntax */
+
 import { downTop } from '../animations';
-import userId from '../user';
+import { userId, getId } from '../user';
 import { popup } from './popup';
 
 export const baseAPI = 'https://aviones-api.herokuapp.com';
@@ -24,21 +25,24 @@ export const login = async (mail, password) => {
       }),
     },
   ).then((response) => {
-    if (response.status !== 200) {
-      popup('Invalid credentials', 'red');
-    } else {
-      sessionStorage.clear();
-      downTop();
-      const authheader = response.headers.get('Authorization');
-      sessionStorage.setItem('token', authheader);
-      return response.json();
+    
+    const checkData = async() =>  {
+      const data = await response.json();
+      console.log(data);
+      if (data.user == null) {
+        popup('Invalid credentials', 'red');
+      } else {
+        sessionStorage.clear();
+        downTop();
+        const authheader = response.headers.get('Authorization');
+        sessionStorage.setItem('token', authheader);
+        console.log(data.user);
+        sessionStorage.setItem('user', JSON.stringify(data.user));
+        window.location = '#/';
+      }
     }
-  }).then((userInfo) => {
-    if (userInfo) {
-      sessionStorage.setItem('user', JSON.stringify(userInfo));
-
-      window.location = '#/';
-    }
+    checkData();
+    
   });
 };
 
@@ -111,9 +115,11 @@ export const deletePlane = async (id) => {
   });
 };
 
-export const addReservation = async (plane_id, start_date, end_date) => {
+export const addReservation = async (start_date, end_date) => {
   console.log(plane_id, start_date, end_date);
+  const planeId = getId();
   const user_id = userId();
+  console.log(planeId, user_id, start_date, end_date);
   await fetch(`${baseAPI}/users/${user_id}/reservations/`, {
     method: 'POST',
     headers: {
@@ -122,10 +128,11 @@ export const addReservation = async (plane_id, start_date, end_date) => {
     },
     body: JSON.stringify({
       reservation: {
-        plane_id,
+        date_of_reservation: start_date,
+        end_of_reservation: end_date,
+        cancelled: false,
         user_id,
-        start_date,
-        end_date,
+        plane_id: planeId,
       },
     }),
   }).then((response) => {

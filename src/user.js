@@ -6,4 +6,9 @@ const userId = () => {
   return user.user.id;
 };
 
-export default userId;
+const getId = (id) => {
+  console.log(id);
+  return id;
+};
+
+export { userId, getId };

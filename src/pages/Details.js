@@ -2,10 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
+import { getId } from '../logic/api';
 import './details.css';
 
 export default function Details() {
   const planeStats = useSelector((state) => state.details.data);
+  const sendId = (e) => {
+    getId(e);
+  };
 
   const plane = planeStats.map((plane) => (
     <div key={plane.id} className="contents">
@@ -47,7 +51,7 @@ export default function Details() {
 
         <div>
           <NavLink to="/add-reservation" className="btns">
-            <p>
+            <p id={plane.id} onClick={(e) => sendId(e.target.id)}>
               <FaRegSun />
               {' '}
               Reserve
