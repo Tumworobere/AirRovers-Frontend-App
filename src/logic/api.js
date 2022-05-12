@@ -96,7 +96,7 @@ export const addPlane = async (name, price, capacity, speed, image, info) => {
   });
 };
 
-export const delete_plane = async (id) => {
+export const deletePlane = async (id) => {
   await fetch(
     `${baseAPI}/planes/${id}`,
     {

@@ -56,7 +56,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-.btn p {
+.btns p {
   text-decoration: none;
   background-color: #1f9751;
   display: flex;
@@ -69,12 +69,12 @@ h1 {
   margin: 1rem;
 }
 
-.btn.back p {
+.btns.back p {
   border-radius: 0 25px 25px 0;
   width: 70px;
 }
 
-.btn svg {
+.btns svg {
   font-size: 25px;
 }
 

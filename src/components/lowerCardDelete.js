@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { delete_plane } from '../logic/api';
+import { deletePlane } from '../logic/api';
 import { fetchAirplanes, loadAirplanes } from '../redux/airplanes/airplanes';
 /* eslint-disable */
 
@@ -26,7 +26,7 @@ const LowerCardDelete = (props) => {
                 text-white"
         onClick={async () => {
           dispatch(loadAirplanes());
-          await (delete_plane(props.airplane.id));
+          await (deletePlane(props.airplane.id));
           dispatch(fetchAirplanes());
         }}
       >

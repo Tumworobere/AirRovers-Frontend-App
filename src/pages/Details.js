@@ -2,16 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
-import { delete_plane } from '../logic/api';
+import { deletePlane } from '../logic/api';
 import './details.css';
 
 export default function Details() {
   const planeStats = useSelector((state) => state.details.data);
-
-  const removeAirplane = (e) => {
-    e.preventDefault();
-    delete_plane(e);
-  };
 
   const plane = planeStats.map((plane) => (
     <div key={plane.id} className="contents">
@@ -52,7 +47,7 @@ export default function Details() {
         </div>
 
         <div>
-          <NavLink to="/add-reservation" className="btn">
+          <NavLink to="/add-reservation" className="btns">
             <p>
               <FaRegSun />
               {' '}
@@ -60,12 +55,12 @@ export default function Details() {
               <FaRegArrowAltCircleRight />
             </p>
           </NavLink>
-          <NavLink to="/" className="btn back">
+          <NavLink to="/" className="btns back">
             <p>
               <FaRegArrowAltCircleLeft />
             </p>
           </NavLink>
-          <button type="button" id={plane.id} onClick={(e) => { removeAirplane(e.target.id); }}>Delete</button>
+          <button type="button" id={plane.id} onClick={(e) => deletePlane(e.target.id)}>Delete</button>
         </div>
       </div>
     </div>
