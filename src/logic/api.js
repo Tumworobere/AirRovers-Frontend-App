@@ -79,16 +79,16 @@ export const addPlane = async (name, price, capacity, speed, image, info) => {
         Authorization: sessionStorage.getItem('token'),
       },
       body: JSON.stringify({
-          Plane: {
-            name: name,
-            capacity: capacity,
-            images: image,
-            price: price,
-            range: 1500,
-            speed: speed,
-            url: info,
-            city: "New York"
-          }
+        Plane: {
+          name,
+          capacity,
+          images: image,
+          price,
+          range: 1500,
+          speed,
+          url: info,
+          city: 'New York',
+        },
       }),
     },
   ).then((response) => {

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { topDown } from '../animations';
@@ -14,15 +14,22 @@ const AddAirplane = () => {
     window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
   }, []);
-  
+
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [capacity, setCapacity] = useState('');
+  const [speed, setSpeed] = useState('');
+  const [image, setImage] = useState('');
+  const [info, setInfo] = useState('');
+
   const createPlane = () => {
     addPlane(
-      newPlane.name.value,
-      newPlane.price.value,
-      newPlane.capacity.value,
-      newPlane.speed.value,
-      newPlane.image.value,
-      newPlane.info.value,
+      name,
+      price,
+      capacity,
+      speed,
+      image,
+      info,
     );
   };
 
@@ -35,7 +42,7 @@ const AddAirplane = () => {
             <label htmlFor="name" className="inline-block text-gray-700 w-full">
               Name
               <br />
-              <input type="text" id="name" placeholder="Enter model" maxLength={20} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setName(e.tartget.value)} value={name} type="text" id="name" placeholder="Enter model" maxLength={20} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -43,14 +50,14 @@ const AddAirplane = () => {
             <label htmlFor="Price" className="inline-block text-gray-700 w-full">
               Price per day
               <br />
-              <input type="number" id="cost" placeholder="Enter cost" max={10000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setPrice(e.tartget.value)} value={price} type="number" id="cost" placeholder="Enter cost" max={10000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
           <div className=" mb-4">
             <label htmlFor="capacity" className="inline-block mb-2 text-gray-700 w-full">
               Capacity
-              <input id="capacity" type="number" placeholder="Enter max number of passengers" max={10} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setCapacity(e.tartget.value)} value={capacity} id="capacity" type="number" placeholder="Enter max number of passengers" max={10} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -58,7 +65,7 @@ const AddAirplane = () => {
             <label htmlFor="speed" className="inline-block text-gray-700 w-full">
               Flying speed
               <br />
-              <input type="number" id="speed" placeholder="Enter flying speed" max={1000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setSpeed(e.tartget.value)} value={speed} type="number" id="speed" placeholder="Enter flying speed" max={1000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -66,7 +73,7 @@ const AddAirplane = () => {
             <label htmlFor="image" className="inline-block text-gray-700 w-full">
               Picture
               <br />
-              <input type="text" id="image" placeholder="Enter image URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setImage(e.tartget.value)} value={image} type="text" id="image" placeholder="Enter image URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -74,7 +81,7 @@ const AddAirplane = () => {
             <label htmlFor="info" className="inline-block text-gray-700 w-full">
               More Info
               <br />
-              <input type="text" id="image" placeholder="Enter info URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setInfo(e.tartget.value)} value={info} type="text" id="image" placeholder="Enter info URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
