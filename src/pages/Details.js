@@ -2,13 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
-import { getId } from '../logic/api';
 import './details.css';
 
 export default function Details() {
   const planeStats = useSelector((state) => state.details.data);
   const sendId = (e) => {
-    getId(e);
+    localStorage.clear();
+    localStorage.setItem('planeId', e);
   };
 
   const plane = planeStats.map((plane) => (
