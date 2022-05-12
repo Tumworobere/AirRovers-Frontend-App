@@ -14,6 +14,7 @@ const AddAirplane = () => {
     window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
     topDown();
   }, []);
+  
   const createPlane = () => {
     addPlane(
       newPlane.name.value,

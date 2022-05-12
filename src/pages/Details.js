@@ -47,7 +47,7 @@ export default function Details() {
         </div>
 
         <div>
-          <NavLink to="/reserve" className="btn">
+          <NavLink to="/add-reservation" className="btn">
             <p>
               <FaRegSun />
               {' '}

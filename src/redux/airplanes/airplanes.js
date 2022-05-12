@@ -19,7 +19,7 @@ export const loadAirplanesSuccess = (payload) => ({
 
 export const fetchAirplanes = () => async (dispatch) => {
   dispatch(loadAirplanes());
-  const fetchedData = await fetch(`${baseAPI}/Airplanes`, {
+  const fetchedData = await fetch(`${baseAPI}/planes`, {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: sessionStorage.getItem('token'),

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { topDown } from '../animations';
-import PlaneCard from '../components/PlaneCard';
+import PlaneCard from '../components/planeCard';
 
 const RemoveAirplane = () => {
   const navigate = useNavigate();

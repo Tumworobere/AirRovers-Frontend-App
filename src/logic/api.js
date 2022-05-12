@@ -71,7 +71,7 @@ export const register = async (name, mail, password) => {
 
 export const addPlane = async (name, price, capacity, speed, image, info) => {
   await fetch(
-    `${baseAPI}api/v1/Aiplanes`,
+    `${baseAPI}/planes`,
     {
       method: 'POST',
       headers: {
@@ -79,14 +79,16 @@ export const addPlane = async (name, price, capacity, speed, image, info) => {
         Authorization: sessionStorage.getItem('token'),
       },
       body: JSON.stringify({
-        Aiplane: {
-          name,
-          rental_price: price,
-          capacity,
-          flying_speed: speed,
-          image,
-          info,
-        },
+          Plane: {
+            name: name,
+            capacity: capacity,
+            images: image,
+            price: price,
+            range: 1500,
+            speed: speed,
+            url: info,
+            city: "New York"
+          }
       }),
     },
   ).then((response) => {

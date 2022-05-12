@@ -13,6 +13,7 @@ import RemoveAirplane from './pages/RemoveAirplane';
 import ErrorPage from './pages/ErrorPage';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
+import Reserve from './pages/Reserve';
 import Login from './pages/Login';
 import Details from './pages/Details';
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/reservations" element={<Reservations />} />
+        <Route path="/add-reservation" element={<Reserve />} />
         <Route path="/" element={<Airplanes />} />
         <Route path="/add-airplane" element={<AddAirplane />} />
         <Route path="/remove-airplane" element={<RemoveAirplane />} />
