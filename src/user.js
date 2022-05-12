@@ -6,9 +6,6 @@ const userId = () => {
   return user.user.id;
 };
 
-const getId = (id) => {
-  console.log(id);
-  return id;
-};
+const getId = (id) => id;
 
 export { userId, getId };

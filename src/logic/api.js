@@ -25,10 +25,8 @@ export const login = async (mail, password) => {
       }),
     },
   ).then((response) => {
-    
-    const checkData = async() =>  {
+    const checkData = async () => {
       const data = await response.json();
-      console.log(data);
       if (data.user == null) {
         popup('Invalid credentials', 'red');
       } else {
@@ -40,9 +38,8 @@ export const login = async (mail, password) => {
         sessionStorage.setItem('user', JSON.stringify(data.user));
         window.location = '#/';
       }
-    }
+    };
     checkData();
-    
   });
 };
 
