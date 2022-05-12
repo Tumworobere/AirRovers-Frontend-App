@@ -86,7 +86,7 @@ export default function CustomizedDialogs(props) {
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           Reserve Airplane
         </BootstrapDialogTitle>
-          <PlaneForm airplane={props.airplane} />
+          <PlaneForm airplane={props.plane} />
       </BootstrapDialog>
     </div>
   );

@@ -28,10 +28,10 @@ const PlaneCard = (props) => {
             alignItems: 'start'
         }} >
             <div className="h-10 w-full bg-gray-900 bg-opacity-75 rounded-t-md">
-                <h1 className="cool-title ml-4 my-auto text-left h-full">{props.airplane.name}</h1>
+                <h1 className="cool-title ml-4 my-auto text-left h-full">{props.plane.name}</h1>
             </div>  
         </CardActionArea> 
-        {location.pathname == '/remove-airplane' ? <LowerCardDelete airplane={props.airplane} /> : <LowerCardReserve airplane={props.airplane} />} 
+        {location.pathname == '/remove-airplane' ? <LowerCardDelete airplane={props.plane} /> : <LowerCardReserve airplane={props.plane} />} 
     </div>
 );}
 

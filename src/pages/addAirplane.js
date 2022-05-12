@@ -12,7 +12,6 @@ const AddAirplane = () => {
   const navigate = useNavigate();
   useEffect(() => {
     window.sessionStorage.getItem('token') == null ? navigate('/login') : null;
-    window.sessionStorage.getItem('admin') !== 'true' ? navigate('/') : null;
     topDown();
   }, []);
   const createPlane = () => {
