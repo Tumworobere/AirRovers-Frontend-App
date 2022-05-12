@@ -4,7 +4,7 @@
 /* eslint-disable no-restricted-syntax */
 
 import { downTop } from '../animations';
-import { userId, getId } from '../user';
+import userId from '../user';
 import { popup } from './popup';
 
 export const baseAPI = 'https://aviones-api.herokuapp.com';
@@ -113,28 +113,24 @@ export const deletePlane = async (id) => {
 };
 
 export const addReservation = async (start_date, end_date) => {
-  console.log(plane_id, start_date, end_date);
-  const planeId = getId();
+  const planeId = localStorage.getItem('planeId');
   const user_id = userId();
-  console.log(planeId, user_id, start_date, end_date);
-  await fetch(`${baseAPI}/users/${user_id}/reservations/`, {
+  await fetch(`${baseAPI}/user/${user_id}/reservations`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-      Authorization: sessionStorage.getItem('token'),
+      // Authorization: sessionStorage.getItem('token'),
     },
     body: JSON.stringify({
-      reservation: {
         date_of_reservation: start_date,
         end_of_reservation: end_date,
         cancelled: false,
         user_id,
         plane_id: planeId,
-      },
     }),
   }).then((response) => {
     response.status === 201 ? popup('Reservation added succesfully', 'green') : popup('Error while adding reservation', 'red');
-  });
+  }).then((data) => console.log(data))
 };
 
 export const delete_reservation = async (id) => {

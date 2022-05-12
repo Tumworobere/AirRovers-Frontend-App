@@ -3,9 +3,7 @@ const userId = () => {
   if (user == null) {
     return false;
   }
-  return user.user.id;
+  return user.id;
 };
 
-const getId = (id) => id;
-
-export { userId, getId };
+export default userId;
