@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { topDown } from '../animations';
@@ -42,7 +42,7 @@ const AddAirplane = () => {
             <label htmlFor="name" className="inline-block text-gray-700 w-full">
               Name
               <br />
-              <input onChange={(e) => setName(e.tartget.value)} value={name} type="text" id="name" placeholder="Enter model" maxLength={20} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setName(e.target.value)} value={name} type="text" id="name" placeholder="Enter model" maxLength={20} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -50,14 +50,14 @@ const AddAirplane = () => {
             <label htmlFor="Price" className="inline-block text-gray-700 w-full">
               Price per day
               <br />
-              <input onChange={(e) => setPrice(e.tartget.value)} value={price} type="number" id="cost" placeholder="Enter cost" max={10000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setPrice(e.target.value)} value={price} type="number" id="cost" placeholder="Enter cost" max={10000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
           <div className=" mb-4">
             <label htmlFor="capacity" className="inline-block mb-2 text-gray-700 w-full">
               Capacity
-              <input onChange={(e) => setCapacity(e.tartget.value)} value={capacity} id="capacity" type="number" placeholder="Enter max number of passengers" max={10} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setCapacity(e.target.value)} value={capacity} id="capacity" type="number" placeholder="Enter max number of passengers" max={10} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -65,7 +65,7 @@ const AddAirplane = () => {
             <label htmlFor="speed" className="inline-block text-gray-700 w-full">
               Flying speed
               <br />
-              <input onChange={(e) => setSpeed(e.tartget.value)} value={speed} type="number" id="speed" placeholder="Enter flying speed" max={1000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setSpeed(e.target.value)} value={speed} type="number" id="speed" placeholder="Enter flying speed" max={1000} required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -73,7 +73,7 @@ const AddAirplane = () => {
             <label htmlFor="image" className="inline-block text-gray-700 w-full">
               Picture
               <br />
-              <input onChange={(e) => setImage(e.tartget.value)} value={image} type="text" id="image" placeholder="Enter image URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setImage(e.target.value)} value={image} type="text" id="image" placeholder="Enter image URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
@@ -81,7 +81,7 @@ const AddAirplane = () => {
             <label htmlFor="info" className="inline-block text-gray-700 w-full">
               More Info
               <br />
-              <input onChange={(e) => setInfo(e.tartget.value)} value={info} type="text" id="image" placeholder="Enter info URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+              <input onChange={(e) => setInfo(e.target.value)} value={info} type="text" id="image" placeholder="Enter info URL" required className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
             </label>
           </div>
 
