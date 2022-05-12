@@ -111,7 +111,8 @@ export const deletePlane = async (id) => {
   });
 };
 
-export const add_reservation = async (plane_id, start_date, end_date) => {
+export const addReservation = async (plane_id, start_date, end_date) => {
+  console.log(plane_id, start_date, end_date);
   const user_id = userId();
   await fetch(`${baseAPI}/users/${user_id}/reservations/`, {
     method: 'POST',

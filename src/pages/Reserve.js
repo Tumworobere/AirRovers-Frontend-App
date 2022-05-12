@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './Login.css';
+import { addReservation } from '../logic/api';
 
 export default function Reserve() {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
-    // reserve(from, to);
+    addReservation(from, to);
   };
 
   return (
@@ -23,7 +24,7 @@ export default function Reserve() {
       </lable>
 
       <lable className="lable">
-        <button className="btn" type="button">Add Reservation</button>
+        <button className="btn" type="submit">Add Reservation</button>
       </lable>
 
     </form>
