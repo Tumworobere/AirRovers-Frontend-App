@@ -133,8 +133,10 @@ export const addReservation = async (start_date, end_date) => {
 };
 
 export const delete_reservation = async (id) => {
+  console.log(id);
+  const userid = userId();
   await fetch(
-    `${baseAPI}/user/reservations/${id}`,
+    `${baseAPI}/user/${userid}reservations/${id}`,
     {
       method: 'DELETE',
       headers: {

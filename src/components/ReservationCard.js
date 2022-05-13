@@ -29,7 +29,7 @@ const ReservationCard = (props) => {
                 </div>
                 <button onClick={async() => {
                   dispatch(loadReservations())
-                  await(delete_reservation(props.reservation.reservation_info.id));
+                  delete_reservation(props.reservation.reservation_info.id);
                   dispatch(fetchReservations());
                 }}
                 type="button" className="w-full bg-red-600 text-white rounded-b-2xl">CANCEL</button>

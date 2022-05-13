@@ -1,10 +1,11 @@
 import { baseAPI } from '../../logic/api';
 import { popup } from '../../logic/popup';
+import userId from '../../user';
 
 const LOAD_RESERVATIONS = 'AirRovers-Frontend-App/reservations/LOAD_RESERVATIONS';
 const LOAD_RESERVATIONS_SUCCESS = 'AirRovers-Frontend-App/reservations/LOAD_RESERVATIONS_SUCCESS';
 const ADD_RESERVATION = 'AirRovers-Frontend-App/reservations/ADD_RESERVATIONS';
-
+const userid = userId();
 const initialState = {
   reservations_arr: [],
   loading: true,
@@ -26,7 +27,7 @@ export const addReservation = (payload) => ({
 
 export const fetchReservations = () => async (dispatch) => {
   dispatch(loadReservations());
-  const fetchedData = await fetch(`${baseAPI}/user/5/reservations`, {
+  const fetchedData = await fetch(`${baseAPI}/user/${userid}/reservations`, {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: sessionStorage.getItem('token'),
