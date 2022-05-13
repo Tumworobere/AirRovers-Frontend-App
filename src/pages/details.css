@@ -56,7 +56,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-.btns p, .butt {
+.btns p,
+.butt {
   text-decoration: none;
   background-color: #1f9751;
   display: flex;
@@ -75,6 +76,7 @@ h1 {
 
 .btns.back p {
   /* border-radius: 0 25px 25px 0; */
+
   /* width: 70px; */
 }
 

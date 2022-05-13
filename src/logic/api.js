@@ -34,7 +34,6 @@ export const login = async (mail, password) => {
         downTop();
         const authheader = response.headers.get('Authorization');
         sessionStorage.setItem('token', authheader);
-        console.log(data.user);
         sessionStorage.setItem('user', JSON.stringify(data.user));
         window.location = '#/';
       }

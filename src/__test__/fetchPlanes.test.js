@@ -51,5 +51,4 @@ describe('fetchPlanesData', () => {
     const planes = await fetchPlanesData();
     expect(planes[0].range).toEqual('1,000 miles');
   });
-}
-);
+});
