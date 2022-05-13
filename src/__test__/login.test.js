@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import Login from '../../src/components/Login';
-import store from '../../redux/configureStore';
+import Login from '../pages/Login';
+import store from '../redux/configureStore';
 
 const mockedUsedNavigate = jest.fn();
 
