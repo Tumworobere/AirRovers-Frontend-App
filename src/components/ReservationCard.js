@@ -8,7 +8,6 @@ import { delete_reservation } from '../logic/api';
 
 const ReservationCard = (props) => {
     const dispatch = useDispatch();
-    console.log(props)
     return(
     <div className='w-full h-36 sm:w-2/3 md:w-full mx-auto md:h-60 rounded-t-3xl flex hover:shadow-2xl hover:shadow-gray-600 transition-all' style={{
         backgroundImage: `url(${props.reservation.plane_info.images})`, 
