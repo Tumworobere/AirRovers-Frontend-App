@@ -13,7 +13,7 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-  const menu = ['Reservations', 'Add Reservation', 'Add Airplane', 'Remove Airplane'];
+  const menu = ['Reservations', 'Add Airplane'];
   const getMenu = () => (menu);
 
   const toggleDrawer = (anchor, open) => (event) => {

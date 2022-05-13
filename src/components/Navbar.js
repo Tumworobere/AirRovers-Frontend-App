@@ -11,7 +11,7 @@ import LogoutButton from './logout';
 const Navbar = () => {
   const navigate = useNavigate();
   const { hash } = window.location;
-  const menu = ['Reservations', 'Add reservation', 'Add Airplane', 'Remove Airplane'];
+  const menu = ['Reservations', 'Add Airplane'];
   const getMenu = () => (menu);
   return (
     <div className={`md:w-1/4 lg:w-1/5 block ${hash === '#/login' || hash === '#/register' ? 'hidden' : null}`}>
