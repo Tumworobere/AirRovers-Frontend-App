@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders the UI as expected 1`] = `
+<div
+  className="mt-0 w-screen"
+>
+  <div
+    className="opacity-0 block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-48 mb-24 -translate-y-full"
+    id="main"
+  >
+    <h1
+      className="mt-3 text-center text-3xl font-bold text-gray-900"
+    >
+      Register 
+    </h1>
+    <form
+      id="form"
+    >
+      <div
+        className=" mb-4"
+      >
+        <label
+          className="inline-block text-gray-700 w-full"
+          htmlFor="user"
+        >
+          Username
+          <br />
+          <input
+            className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Enter username"
+            required={true}
+            type="text"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className=" mb-4"
+      >
+        <label
+          className="inline-block text-gray-700 w-full"
+          htmlFor="email"
+        >
+          Email
+          <br />
+          <input
+            className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="Enter email address"
+            required={true}
+            type="email"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        className=" mb-6"
+      >
+        <label
+          className="inline-block mb-2 text-gray-700 w-full"
+          htmlFor="password"
+        >
+          Password
+          <input
+            className="mt-2 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            id="password"
+            onChange={[Function]}
+            placeholder="Enter password"
+            required={true}
+            type="password"
+            value=""
+          />
+        </label>
+      </div>
+      <button
+        className="w-full px-6 py-2.5 bg-emerald-800 text-black font-medium text-m leading-tight rounded-full shadow-md hover:bg-lime-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lime-500 active:shadow-lg transition duration-150 ease-in-out cursor-pointer"
+        onClick={[Function]}
+        type="button"
+      >
+        Register
+      </button>
+      <p
+        className="text-gray-800 mt-6 text-center"
+      >
+        Already a member?
+        <button
+          className="text-indigo-600 hover:text-indigo-700 focus:text-indigo-700 transition duration-200 ease-in-out"
+          onClick={[Function]}
+          type="button"
+        >
+          Log In
+        </button>
+        <br />
+      </p>
+    </form>
+  </div>
+</div>
+`;

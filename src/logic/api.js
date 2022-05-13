@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable consistent-return */
 /* eslint-disable no-restricted-syntax */
+
 import { downTop } from '../animations';
 import userId from '../user';
 import { popup } from './popup';
@@ -24,21 +25,20 @@ export const login = async (mail, password) => {
       }),
     },
   ).then((response) => {
-    if (response.status !== 200) {
-      popup('Invalid credentials', 'red');
-    } else {
-      sessionStorage.clear();
-      downTop();
-      const authheader = response.headers.get('Authorization');
-      sessionStorage.setItem('token', authheader);
-      return response.json();
-    }
-  }).then((userInfo) => {
-    if (userInfo) {
-      sessionStorage.setItem('user', JSON.stringify(userInfo));
-
-      window.location = '#/';
-    }
+    const checkData = async () => {
+      const data = await response.json();
+      if (data.user == null) {
+        popup('Invalid credentials', 'red');
+      } else {
+        sessionStorage.clear();
+        downTop();
+        const authheader = response.headers.get('Authorization');
+        sessionStorage.setItem('token', authheader);
+        sessionStorage.setItem('user', JSON.stringify(data.user));
+        window.location = '#/';
+      }
+    };
+    checkData();
   });
 };
 
@@ -111,30 +111,30 @@ export const deletePlane = async (id) => {
   });
 };
 
-export const add_reservation = async (plane_id, start_date, end_date) => {
+export const addReservation = async (start_date, end_date) => {
+  const planeId = localStorage.getItem('planeId');
   const user_id = userId();
-  await fetch(`${baseAPI}/users/${user_id}/reservations/`, {
+  await fetch(`${baseAPI}/user/${user_id}/reservations`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: sessionStorage.getItem('token'),
     },
     body: JSON.stringify({
-      reservation: {
-        plane_id,
-        user_id,
-        start_date,
-        end_date,
-      },
+      date_of_reservation: start_date,
+      end_of_reservation: end_date,
+      cancelled: false,
+      user_id,
+      plane_id: planeId,
     }),
   }).then((response) => {
     response.status === 201 ? popup('Reservation added succesfully', 'green') : popup('Error while adding reservation', 'red');
-  });
+  }).then((data) => console.log(data));
 };
 
 export const delete_reservation = async (id) => {
   await fetch(
-    `${baseAPI}api/v1/reservations/${id}`,
+    `${baseAPI}/user/reservations/${id}`,
     {
       method: 'DELETE',
       headers: {

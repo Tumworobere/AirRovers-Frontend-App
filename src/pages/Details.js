@@ -1,12 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
-import { deletePlane } from '../logic/api';
+import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft } from 'react-icons/fa';
 import './details.css';
 
 export default function Details() {
   const planeStats = useSelector((state) => state.details.data);
+  const sendId = (e) => {
+    localStorage.clear();
+    localStorage.setItem('planeId', e);
+  };
 
   const plane = planeStats.map((plane) => (
     <div key={plane.id} className="contents">
@@ -48,19 +51,19 @@ export default function Details() {
 
         <div>
           <NavLink to="/add-reservation" className="btns">
-            <p>
-              <FaRegSun />
+            <button id={plane.id} onClick={(e) => sendId(e.target.id)} type="button" className="butt">
               {' '}
               Reserve
               <FaRegArrowAltCircleRight />
-            </p>
+            </button>
           </NavLink>
           <NavLink to="/" className="btns back">
             <p>
+              {' '}
+              Back
               <FaRegArrowAltCircleLeft />
             </p>
           </NavLink>
-          <button type="button" id={plane.id} onClick={(e) => deletePlane(e.target.id)}>Delete</button>
         </div>
       </div>
     </div>

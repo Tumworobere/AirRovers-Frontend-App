@@ -28,10 +28,14 @@ const App = () => {
   const loading1 = useSelector((state) => state.airplanes.loading);
   const loading2 = useSelector((state) => state.reservations.loading);
   const { hash } = window.location;
+  const newUser = () => {
+    window.location = '#/login';
+  };
+
   return (
     <Router>
-      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? loading1 || loading2 ? true : null : null}
-      {hash !== '#/login' && hash !== '#/register' && hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
+      {sessionStorage.length !== 0 ? loading1 || loading2 : newUser()}
+      {hash !== '#/login' && hash !== '#/register' ? <Navbar /> : null }
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />

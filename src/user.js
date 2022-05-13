@@ -3,7 +3,7 @@ const userId = () => {
   if (user == null) {
     return false;
   }
-  return user.user.id;
+  return user.id;
 };
 
 export default userId;

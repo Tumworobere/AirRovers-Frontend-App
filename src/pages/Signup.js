@@ -20,8 +20,8 @@ const Register = () => {
 
   sessionStorage.getItem('token') !== null ? navigate('/') : null;
   return (
-    <div className="h-screen w-screen">
-      <div id="main" className="opacity-0 -translate-y-full block p-5 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-30 transition-all duration-1000">
+    <div className="mt-0 w-screen">
+      <div id="main" className="opacity-0 block p-6 rounded-lg shadow-lg bg-white w-3/4 md:w-1/2 lg:w-1/3 h-auto m-auto mt-48 mb-24 -translate-y-full">
         <h1 className="mt-3 text-center text-3xl font-bold text-gray-900">Register </h1>
         <form id="form">
           <div className=" mb-4">

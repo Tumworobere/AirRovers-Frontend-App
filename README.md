@@ -4,7 +4,8 @@
 > This is the frontend of the AirRover Application. Users are able to register, login, and logout. Users are redirected to the login page if they aren't logged in. Users can create a reservation to book a specific Airplane and view them within the reservations page. The backend can be found [here](https://github.com/alexander16108/AirRentals-backend)
 
 ## Screenshots
-
+![image](https://user-images.githubusercontent.com/60612329/168289822-9262efb3-445e-446f-969d-3f949b666fec.png)
+![image](https://user-images.githubusercontent.com/60612329/168289892-cc802ba4-348a-49c9-908d-58dc04101617.png)
 
 
 ## Live Demo
