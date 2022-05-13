@@ -42,7 +42,6 @@ export const PostReservation = (start, end, airplane) => async (dispatch) => {
     date_start: start,
     date_end: end,
   };
-
   await fetch(`${baseAPI}/user/5/reservations`,
     {
       method: 'POST',
