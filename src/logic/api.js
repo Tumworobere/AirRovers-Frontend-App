@@ -133,7 +133,6 @@ export const addReservation = async (start_date, end_date) => {
 };
 
 export const delete_reservation = async (id) => {
-  console.log(id);
   const userid = userId();
   await fetch(
     `${baseAPI}/user/${userid}/reservations/${id}`,
@@ -145,7 +144,6 @@ export const delete_reservation = async (id) => {
       },
     },
   ).then((response) => {
-    console.log(response);
     response.status === 200 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
   });
   // window.location.reload();
