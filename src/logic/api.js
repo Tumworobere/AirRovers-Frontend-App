@@ -146,5 +146,5 @@ export const delete_reservation = async (id) => {
   ).then((response) => {
     response.status === 200 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
   });
-  // window.location.reload();
+  window.location.reload();
 };

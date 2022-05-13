@@ -7,6 +7,7 @@ import ReservationCard from '../components/ReservationCard';
 import { topDown } from '../animations';
 
 const Reservations = () => {
+  // window.location.reload() ;
   const navigate = useNavigate();
   const reservations = useSelector((state) => state.reservations.reservations_arr);
   useEffect(() => {
