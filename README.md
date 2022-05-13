@@ -9,6 +9,7 @@
 
 
 ## Live Demo
+[👉 Please check](https://air-rovers-frontend-app.vercel.app/)
 
 ## Built with
 - HTML
@@ -30,7 +31,7 @@
 
 ## Getting Started
 
-**To get this project set up on your local machine, follow these steps:**
+**To get the API project set up on your local machine, follow these steps:**
 
 1. Open Terminal.
 2. Navigate to your desired location to download the contents of this repository.
