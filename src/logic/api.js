@@ -119,7 +119,7 @@ export const addReservation = async (start_date, end_date) => {
     method: 'POST',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-      // Authorization: sessionStorage.getItem('token'),
+      Authorization: sessionStorage.getItem('token'),
     },
     body: JSON.stringify({
       date_of_reservation: start_date,
