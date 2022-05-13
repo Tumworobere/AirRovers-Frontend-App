@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { FaRegArrowAltCircleRight, FaRegSun, FaRegArrowAltCircleLeft } from 'react-icons/fa';
+import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft } from 'react-icons/fa';
 import './details.css';
 
 export default function Details() {
@@ -51,15 +51,16 @@ export default function Details() {
 
         <div>
           <NavLink to="/add-reservation" className="btns">
-            <p id={plane.id} onClick={(e) => sendId(e.target.id)}>
-              <FaRegSun />
+            <button id={plane.id} onClick={(e) => sendId(e.target.id)} type="button" className="butt">
               {' '}
               Reserve
               <FaRegArrowAltCircleRight />
-            </p>
+            </button>
           </NavLink>
           <NavLink to="/" className="btns back">
             <p>
+              {' '}
+              Back
               <FaRegArrowAltCircleLeft />
             </p>
           </NavLink>
