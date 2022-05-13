@@ -41,5 +41,15 @@ describe('fetchPlanesData', () => {
     const planes = await fetchPlanesData();
     expect(planes[0].name).toEqual('Lighter-than-air');
   });
+
+  it('test fetching plane capacity from the array', async () => {
+    const planes = await fetchPlanesData();
+    expect(planes[0].capacity).toEqual(2);
+  });
+
+  it('test fetching plane range from the array', async () => {
+    const planes = await fetchPlanesData();
+    expect(planes[0].range).toEqual('1,000 miles');
+  });
 }
 );
