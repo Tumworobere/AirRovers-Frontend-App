@@ -129,14 +129,14 @@ export const addReservation = async (start_date, end_date) => {
     }),
   }).then((response) => {
     response.status === 201 ? popup('Reservation added succesfully', 'green') : popup('Error while adding reservation', 'red');
-  }).then((data) => console.log(data));
+  });
 };
 
 export const delete_reservation = async (id) => {
   console.log(id);
   const userid = userId();
   await fetch(
-    `${baseAPI}/user/${userid}reservations/${id}`,
+    `${baseAPI}/user/${userid}/reservations/${id}`,
     {
       method: 'DELETE',
       headers: {
@@ -145,6 +145,8 @@ export const delete_reservation = async (id) => {
       },
     },
   ).then((response) => {
-    response.status === 204 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
+    console.log(response);
+    response.status === 200 ? popup('Reservation removed succesfully', 'green') : popup('Error while removing reservation', 'red');
   });
+  // window.location.reload();
 };
