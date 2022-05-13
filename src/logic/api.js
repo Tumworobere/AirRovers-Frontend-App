@@ -135,7 +135,7 @@ export const addReservation = async (start_date, end_date) => {
 
 export const delete_reservation = async (id) => {
   await fetch(
-    `${baseAPI}api/v1/reservations/${id}`,
+    `${baseAPI}/user/reservations/${id}`,
     {
       method: 'DELETE',
       headers: {

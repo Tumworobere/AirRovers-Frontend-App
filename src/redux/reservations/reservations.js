@@ -26,7 +26,7 @@ export const addReservation = (payload) => ({
 
 export const fetchReservations = () => async (dispatch) => {
   dispatch(loadReservations());
-  const fetchedData = await fetch(`${baseAPI}/reservations`, {
+  const fetchedData = await fetch(`${baseAPI}/user/5/reservations`, {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: sessionStorage.getItem('token'),
@@ -43,7 +43,7 @@ export const PostReservation = (start, end, airplane) => async (dispatch) => {
     date_end: end,
   };
 
-  await fetch(`${baseAPI}/reservations`,
+  await fetch(`${baseAPI}/user/5/reservations`,
     {
       method: 'POST',
       headers: {
